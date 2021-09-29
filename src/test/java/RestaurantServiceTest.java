@@ -11,21 +11,24 @@ class RestaurantServiceTest {
     Restaurant restaurant;
 
     @BeforeEach
-    public void setup() {
+    public void setup()
+    {
         LocalTime openingTime = LocalTime.parse("10:30:00");
         LocalTime closingTime = LocalTime.parse("22:00:00");
         restaurant = service.addRestaurant("Amelie's cafe","Chennai",openingTime,closingTime);
     }
 
     @Test
-    public void searching_for_existing_restaurant_should_return_expected_restaurant_object() throws restaurantNotFoundException {
+    public void searching_for_existing_restaurant_should_return_expected_restaurant_object() throws restaurantNotFoundException
+    {
         Restaurant restaurantByName = service.findRestaurantByName("Amelie's cafe");
         assertNotNull(restaurantByName);
 
     }
 
     @Test
-    public void searching_for_non_existing_restaurant_should_throw_exception() throws restaurantNotFoundException {
+    public void searching_for_non_existing_restaurant_should_throw_exception() throws restaurantNotFoundException
+    {
         assertThrows(restaurantNotFoundException.class, ()->{
             service.findRestaurantByName("Not a Restaurant");
         });

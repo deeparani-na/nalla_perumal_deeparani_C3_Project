@@ -23,7 +23,8 @@ public class Restaurant {
         this.closingTime = closingTime;
     }
 
-    public boolean isRestaurantOpen() {
+    public boolean isRestaurantOpen()
+    {
         if(getCurrentTime().isAfter(openingTime) && getCurrentTime().isBefore(closingTime))
             return true;
         else
@@ -32,7 +33,8 @@ public class Restaurant {
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
-    public List<Item> getMenu() {
+    public List<Item> getMenu()
+    {
         return Collections.unmodifiableList(menu);
     }
 
