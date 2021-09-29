@@ -72,4 +72,12 @@ public class Restaurant {
         return name;
     }
 
+    public int orderValue(String itemName){
+        for(Item item : menu) {
+            if(itemName.equals(item.getName()))
+                return item.getPrice();
+        }
+        return 0;
+    }
+
 }
