@@ -71,4 +71,12 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
 
+    @Test
+    public void order_value_is_positive_integer_value() {
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+
+        assertEquals(119, restaurant.orderValue("Sweet corn soup"));
+    }
+
 }
